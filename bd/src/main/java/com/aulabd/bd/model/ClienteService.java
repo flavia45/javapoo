@@ -20,16 +20,16 @@ public class ClienteService {
         return cdao.puxarTodosClientes();
     }
 
-    public Map<String,Object> puxarCliente(int id){
-        return cdao.puxarCliente(id);
+    public Map<String,Object> puxarCliente(int id_cliente){
+        return cdao.puxarCliente(id_cliente);
     }
 
-    public void atualizarCliente(Cliente cli,int id){
-        cdao.atualizarCliente(cli,id);
+    public void atualizarCliente(Cliente cli,int id_cliente){
+        cdao.atualizarCliente(cli,id_cliente);
     }
 
-    public void deletar(int id){
-        cdao.deletar(id);
+    public void deletar(int id_cliente){
+        cdao.deletar(id_cliente);
     }
 
 }

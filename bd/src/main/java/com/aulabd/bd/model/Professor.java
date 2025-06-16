@@ -6,29 +6,26 @@ import java.util.List;
 import java.util.Map;
 
 public class Professor {
-private int id;
+private int id_professor;
     private String nome, cpf;
 
     //INICIALIZAR FORM
     public Professor(){
-
     }
 
-    //id eh auto incremento, INSERIR
     public Professor(String nome, String cpf){
         this.nome = nome;
         this.cpf = cpf;
     }
 
-    //SELECT
-    public Professor(int id, String cpf, String nome) {
+    public Professor(int id_professor, String cpf, String nome) {
         this.cpf = cpf;
-        this.id = id;
+        this.id_professor = id_professor;
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
+    public int getId_professor() {
+        return id_professor;
     }
 
     public String getNome() {
@@ -39,8 +36,8 @@ private int id;
         return cpf;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_professor) {
+        this.id_professor = id_professor;
     }
 
     public void setNome(String nome) {
@@ -52,11 +49,11 @@ private int id;
     }
 
     public static Professor converterUmProfessor (Map<String,Object> registro){
-        int id = (Integer) registro.get("id");
+        int id_professor = (Integer) registro.get("id_professor");
         String nome = (String) registro.get("nome");
         String cpf = (String) registro.get("cpf");
-        Professor cli = new Professor(id,cpf,nome);
-        return cli;
+        Professor pro = new Professor(id_professor,cpf,nome);
+        return pro;
     }
 
     public static List<Professor> converterNProfessors(List<Map<String,Object>> registros){

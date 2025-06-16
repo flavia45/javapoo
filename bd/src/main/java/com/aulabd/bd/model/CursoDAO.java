@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import jakarta.annotation.PostConstruct;
 
-
 public class CursoDAO {
 @Autowired
 	DataSource dataSource;

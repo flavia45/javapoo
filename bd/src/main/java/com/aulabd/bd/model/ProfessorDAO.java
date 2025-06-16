@@ -1,5 +1,3 @@
-
-
 package com.aulabd.bd.model;
 
 import java.util.List;
@@ -32,27 +30,27 @@ public class ProfessorDAO {
         jdbc.update(sql, parametros);
     }
 
-    public List<Map<String,Object>> puxarTodosProfessors(){
+    public List<Map<String,Object>> puxarTodosProfessores(){
         String sql = "SELECT * FROM professor;";
         return jdbc.queryForList(sql);
     } 
 
-    public Map<String,Object> puxarProfessor(int id){
-        String sql = "SELECT * FROM professor WHERE id = ?;";
-        return jdbc.queryForMap(sql, id);
+    public Map<String,Object> puxarProfessor(int id_professor){
+        String sql = "SELECT * FROM professor WHERE id_professor = ?;";
+        return jdbc.queryForMap(sql, id_professor);
     }
 
-    public void deletar(int id){
-        String sql = "DELETE FROM professor where id = ?;";
-        jdbc.update(sql, id);
+    public void deletar(int id_professor){
+        String sql = "DELETE FROM professor where id_professor = ?;";
+        jdbc.update(sql, id_professor);
     }
 
-    public void atualizarProfessor(Professor pro, int id){
-        String sql = "UPDATE professor SET nome = ?, cpf = ? WHERE id = ?";
+    public void atualizarProfessor(Professor pro, int id_professor){
+        String sql = "UPDATE professor SET nome = ?, cpf = ? WHERE id_professor = ?";
         Object[] parametros = new Object[3];
         parametros[0] = pro.getNome();
         parametros[1] = pro.getCpf();
-        parametros[2] = id;
+        parametros[2] = id_professor;
         jdbc.update(sql, parametros);
     }
 }

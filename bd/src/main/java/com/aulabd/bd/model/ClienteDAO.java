@@ -1,4 +1,3 @@
-
 package com.aulabd.bd.model;
 
 import java.util.List;
@@ -38,22 +37,22 @@ public class ClienteDAO {
         return jdbc.queryForList(sql);
     } 
 
-    public Map<String,Object> puxarCliente(int id){
-        String sql = "SELECT * FROM cliente WHERE id = ?;";
-        return jdbc.queryForMap(sql, id);
+    public Map<String,Object> puxarCliente(int id_cliente){
+        String sql = "SELECT * FROM cliente WHERE id_cliente = ?;";
+        return jdbc.queryForMap(sql, id_cliente);
     }
 
-    public void deletar(int id){
-        String sql = "DELETE FROM cliente where id = ?;";
-        jdbc.update(sql, id);
+    public void deletar(int id_cliente){
+        String sql = "DELETE FROM cliente where id_cliente = ?;";
+        jdbc.update(sql, id_cliente);
     }
 
-    public void atualizarCliente(Cliente cli, int id){
-        String sql = "UPDATE cliente SET nome = ?, cpf = ? WHERE id = ?";
+    public void atualizarCliente(Cliente cli, int id_cliente){
+        String sql = "UPDATE cliente SET nome = ?, cpf = ? WHERE id_cliente = ?";
         Object[] parametros = new Object[3];
         parametros[0] = cli.getNome();
         parametros[1] = cli.getCpf();
-        parametros[2] = id;
+        parametros[2] = id_cliente;
         jdbc.update(sql, parametros);
     }
 }

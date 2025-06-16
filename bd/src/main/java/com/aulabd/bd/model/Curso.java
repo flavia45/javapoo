@@ -1,5 +1,3 @@
-
-
 package com.aulabd.bd.model;
 
 import java.util.ArrayList;
@@ -12,17 +10,14 @@ public class Curso {
 
     //INICIALIZAR FORM
     public Curso(){
-
     }
-
-    //id eh auto incremento, INSERIR
+    
     public Curso(int id_cliente, int id_professor, String nome){
         this.nome = nome;
         this.id_cliente = id_cliente;
         this.id_professor = id_professor;
     }
 
-    //SELECT
     public Curso(int id_curso, int id_cliente, int id_professor, String nome) {
         this.id_curso = id_curso;
         this.nome = nome;
